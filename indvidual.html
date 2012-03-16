@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Individual</title>
+
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="css/individual.css" type="text/css" media="screen">
+    <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<!-- jquery script -->
+	  <script src="jquery/js/jquery.js"></script>
+  <script type="text/javascript">
+	// イベントを設定
+	$(function() {
+		//テキストの文字を数える。今はMax150文字
+		$("textarea").keyup(function(){
+	          var counter = $(this).val().length;
+	        $("#countUp").text(counter);
+	        if(counter == 0){
+	            $("#countUp").text("0");
+	        }
+	        if(counter >= 150){
+	            $("#countUp").css("color","red");
+	        } else{$("#countUp").css("color","#666");}
+	    });
+	});
+//-->
+</script>
+
+  </head>
+  <body>
+    <div class="container showgrid">
+    <br>
+      <h1>Play list Title</h1>
+      <hr>
+      <div class="span-7 colborder">
+        <p><img src="css/blueprint/src/rocknrave.jpg" class="top" alt="test"></p>
+      </div>
+      <div class="span-14 last">
+        <h3>Auther Comments</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+      <hr>
+      <h3>Genre Tags</h3>
+        <p> <a href="#">House</a>,<a href="#">Cross-over</a></p>
+      </div>
+      <hr>
+<div class="span-24 last">
+      <div class="span-16  colborder">
+      <h3>Play List</h3>
+			<table id = "Playlist-Table" >
+			<!-- ループはTrack-Row単位 -->
+			<tr class = "track-row">
+			<td class = "number-cell span-1">
+				1
+				</td>
+				<td class = "track-cell span-15">
+				<div class ="content">
+				<a title="Go to track page for: Song name" href="/track/link" class="trackname">Song name</a>
+				<span class="by" >by</span>
+				<a title="Go to artist page for: artist" href="/track/link" class="artistname">SUZUKI YUUUUTAAAAAAAAAAAAAA</a>
+				<div class="etc" >House , 120 bpm , Cut in Cut out , sinc</div>
+				<a title="Do you want to buy this tune?" href="/track/link" class="buy">Buy</a>
+				</div>
+				<div class="comment" style="">This is good tune but someone said "what's the fuck this".</div>
+				</td>
+			</tr>
+			<tr class = "track-row">
+			<td class = "number-cell span-1">
+				2
+				</td>
+				<td class = "track-cell span-15">
+				<div class ="content">
+				<a title="Go to track page for: Song name" href="/track/link" class="trackname">Song name</a>
+				<span class="by" >by</span>
+				<a title="Go to artist page for: artist" href="/track/link" class="artistname">artist</a>
+				<div class="etc" >House , 120 bpm , Cut in Cut out , sinc</div>
+				<a title="Do you want to buy this tune?" href="/track/link" class="buy">Buy</a>
+				</div>
+				<div class="comment" style="">This is good tune.</div>
+				</td>
+			</tr>
+			</table>
+      </div>
+      <div class="span-7 last">
+        <h3>Youtube Mixed</h3>
+  </div>
+  </div>
+      <hr>
+      <div class="span-24 last">
+      <h3 class="alt">Comment</h3>
+      <div class="span-16 last">
+<form id="Comment" action="" method="post">
+  <textarea name="Comment" id="Comment" rows="5" cols="50"></textarea>
+  <input type="submit" id="submit" value="submit" style="float:right; " />
+  <span id="countUp" style="float:left;">0</span>
+ 	</form>
+ 	<table id = "Comment-Table" >
+			<tr class = "Comment-row">
+			<td class = "number-cell span-1">
+				1
+				</td>
+				<td class = "Comment-cell span-15 last">
+				</td>
+			</tr>
+			</table>
+    </div>
+
+   </div>
+      <hr>
+
+      <h3 class="alt">Footer</h3>
+    </div>
+  </body>
+</html>
