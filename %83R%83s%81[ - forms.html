@@ -1,0 +1,122 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+	<html lang="en">
+	  <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <!-- Framework CSS -->
+	    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+	    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+	    <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	 <!-- jquery script -->
+	  <script src="jquery/js/jquery.js"></script>
+  <script type="text/javascript">
+  <!--
+	// フォームの複製を行う関数を定義
+	var copy_block = function(i) {
+		var increament_id = function(name,id) {
+			$("#cover"+id+" ."+name).attr("id", name+id).attr("name", name+id);
+		};
+		var target = $("#cover"+(i-1));
+		target.clone().insertAfter(target).attr("id","cover"+i);
+		increament_id("text",i);
+		increament_id("Song",i);
+		increament_id("Genre",i);
+		increament_id("BPM",i);
+		increament_id("checkbox",i);
+		increament_id("sinc",i);
+		increament_id("Comment",i);
+		$("#field"+i).val(i);
+		alert(" got focus2."+i);
+	};
+
+	// イベントを設定
+	$(function() {
+		$("#button1").click(function() {
+			var i=1;
+			while($("#cover"+i).length != 0) {
+				i++;
+			}
+			copy_block(i);
+		});
+	});
+  //-->
+  </script>
+
+  <title>test</title>
+</head>
+<body>
+ <div class="container showgrid">
+ <br>
+      <h1>CreatePage</h1>
+      <hr>
+      <div class="span-24 last">
+      <form id="PlayList" action="" method="post">
+ <fieldset>
+            <legend>Play List Infomation</legend>
+               <div class="span-18">
+              <label for="AutherC">Auther Comment</label><br>
+              <textarea name="AutherC" id="AutherC" rows="5" cols="10"></textarea>
+              </div>
+              <div class="span-5 last">
+              <label for="PLtags">Playlist Genre (for tags)</label>
+              <input type="text" class="mid" id="PLtags" name="PLtags" value="">
+              <label for="Pic">Picture</label>
+              <input type="file" name="Pic">
+            </div>
+           </fieldset>
+           </form>
+</div>
+<div class="span-24 last">
+<form id="Detail" action="" method="post">
+  <fieldset>
+            <legend>Play list</legend>
+  <div id="cover1">
+              <div class="span-1">
+            <b>1</b>
+            </div>
+               <div class="span-7">
+              <label for="Artist">Artist</label>
+              <input type="text" class="Artist" name="Artist1" id="Artist1" value="">
+              </div>
+               <div class="span-7">
+              <label for="">Song</label>
+               <input type="text" class="Song" name="Song1" id="Song1" value="">
+              </div>
+              <div class="span-4">
+              <label for="Genre">Genre</label>
+              <input type="text" class="Genre" id="Genre1" name="Genre1" value="">
+            </div>
+            <div class="span-4 last ">
+              <label for="BPM">BPM</label>
+              <input type="text" class="BPM" id="BPM1" name="BPM1" value="">
+            </div>
+            <div class="span-1">
+<p> </p>
+            </div>
+            <div class="span-5">
+            <label for="Mix">Mix type</label>
+            <select id="Mix1" name="Mix1"class="Mix">
+              <option value="1">Fade in Fade out</option>
+              <option value="2">Fade in Cut out</option>
+              <option value="3">CUT in  Fade out</option>
+              <option value="4">CUT in  Cut out</option>
+            </select>
+             </div>
+             <div class="span-2">
+             <label>SINC</label><br>
+              <input type="checkbox" id="checkbox1" name="checkbox1" value="true" checked="checked" class="checkbox">
+            </div>
+             <div class="span-15 last ">
+              <label for="Comment">Comment</label>
+              <input type="text" class="Comment" id="Comment1" name="comment1" value="">
+            </div>
+  </div>
+   </fieldset>
+   </form>
+  </div>
+  <hr>
+  <input type="button" id="button1" value="copy" />
+     </div>
+</body>
+</html>
