@@ -16,30 +16,27 @@
      <script src="jquery/js/jquery.tmpl.js"></script>
      <script type="text/javascript">
 	// イベントを設定
-    dd = new Date();
-document.write(dd.toLocaleString());
-var movies = [
-{ Name: "The Red Violin", ReleaseYear: "1998" },
-{ Name: "Eyes Wide Shut", ReleaseYear: "1999" },
-{ Name: "The Inheritance", ReleaseYear: "1976" }
-];
-
         $(function() {
             //Get Json data
-            $.get('Playlist.json',$.noop,'json').done(function(data, statusText,jqXHR){
-            alert(data.Playlist[0].Title);
+            $.get('Playlist.json',$.noop,'json').done(function(Pdata, statusText,jqXHR){
+            alert(Pdata.Playlist[0].Title);
             //var markup = "<li><b>${Title}</b> (${Artist})</li>";
             // Compile the markup as a named template
-              $( "#Playlisttemp" ).tmpl( data.Playlist )
+              $( "#Playlisttemp" ).tmpl( Pdata.Playlist )
              .appendTo( "#Playlist-Table" );
              })
              .fail(function(jqXHR,statusText,error){
-             alert("Can't get data");
+             alert("Can't get Playlist data");
              });
              
-             $( "#movieTemplate" ).tmpl( movies )
-             .appendTo( "#movieList" );
-             
+             $.get('Comment.json',$.noop,'json').done(function(Cdata, statusText,jqXHR){
+            alert(Cdata.Commentlist[0].Comment);
+              $( "#Commentlist" ).tmpl( Cdata.Commentlist )
+             .appendTo( "#Comment-Table" );
+             })
+             .fail(function(jqXHR,statusText,error){
+             alert("Can't get Comment data");
+             });
         });
      //-->
     </script>
@@ -68,7 +65,7 @@ var movies = [
       <script id="Playlisttemp" type="text/x-jquery-tmpl">
       <tr class = "track-row">
 			<td class = "number-cell span-1">
-				1
+                ${NUM}
 				</td>
 				<td class = "track-cell span-15">
 				<div class ="content">
@@ -82,7 +79,6 @@ var movies = [
 				</td>
 			</tr>
          </script>   
-            
       TEST
       </div>
       <div class="span-7 last">
@@ -98,16 +94,20 @@ var movies = [
   <input type="submit" id="submit" value="submit" style="float:right; " />
   <span id="countUp" style="float:left;">0</span>
  	</form>
- 	<table id = "Comment-Table" >
-			<tr class = "Comment-row">
+     
+ 	<table id = "Comment-Table" >　</table>
+        <script id="Commentlist" type="text/x-jquery-tmpl">
+            <tr class = "Comment-row">
 			<td class = "number-cell span-1">
-				1
+				${NUM}
 				</td>
 				<td class = "Comment-cell span-15 last">
+                ${Comment}
 				</td>
 			</tr>
-			</table>
-    </div>
+         </script>   
+    </div>   
+   
 
    </div>
       <hr>
