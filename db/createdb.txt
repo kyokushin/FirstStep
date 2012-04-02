@@ -1,0 +1,92 @@
+/* create database music_play_list; */
+create database music_play_list;
+
+create table music_play_list.user (
+	id int auto_increment 
+		not null,
+	name varchar(20) 
+		not null,
+	created_date_time datetime 
+		not null,
+	last_login_date_time datetime 
+		not null,
+	created_play_list_num int unsigned 
+		not null 
+		default 0,
+	icon_path text 
+		default null,
+	password blob 
+		not null,
+	index(id)
+);
+
+create table music_play_list.play_list (
+	id int auto_increment 
+		not null,
+	title varchar(30) 
+		not null,
+	user_id int unsigned 
+		not null,
+	user_comment text,
+	genre text
+		not null,
+	access_count int unsigned 
+		not null
+		default 0,
+	created_date_time datetime 
+		not null,
+	last_access_date_time datetime 
+		not null,
+	state blob
+		default null,
+	foreign key (user_id) references user(id),
+	index(id)
+);
+create table music_play_list.play_list_item (
+	id int auto_increment 
+		not null,
+	play_list_id int 
+		not null,
+	music_id int 
+		not null,
+	order_number int unsigned 
+		not null,
+	sinc int,
+	bpm int,
+	genre varchar(30),
+	in_out int unsigned,
+	comment text,
+	foreign key (play_list_id) references play_list(id),
+	foreign key (music_id) references music(id),
+	index(id)
+);
+create table music_play_list.music (
+	id int auto_increment 
+		not null,
+	song_name varchar(30) 
+		not null,
+	artist_name varchar(30),
+	url text 
+		not null,
+	reffered_count int unsigned 
+		default 0,
+	url_by_user int
+		default 0,
+	index(id)
+);
+create table music_play_list.play_list_comment (
+	id int auto_increment 
+		not null,
+	user_id int 
+		not null,
+	play_list_id int 
+		not null,
+	comment text,
+	date_time datetime
+		not null,
+	foreign key ( user_id) references user(id),
+	foreign key (play_list_id) references play_list(id),
+	index(id)
+);
+
+grant all on music_play_list.* to 'takuma@localhost' identified by 'takuma';
