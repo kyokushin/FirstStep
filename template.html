@@ -13,26 +13,30 @@
     <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <!-- jquery script -->
      <script src="jquery/js/jquery.js"></script>
+     <script src="jquery/js/jquery.tmpl.js"></script>
      <script type="text/javascript">
 	// イベントを設定
         $(function() {
-            //テキストの文字を数える。今はMax150文字
-            $("textarea").keyup(function(){
-	          var counter = $(this).val().length;
-	        $("#countUp").text(counter);
-	        if(counter == 0){
-	            $("#countUp").text("0");
-	        }
-	        if(counter >= 150){
-	            $("#countUp").css("color","red");
-	        } else{$("#countUp").css("color","#666");}
-            });
-            
             //Get Json data
-            $.get('play.json',$.noop,'json').done(function(data, statusText,jqXHR){
-            alert(data.Title);
-            });
-            
+            $.get('Playlist.json',$.noop,'json').done(function(Pdata, statusText,jqXHR){
+            alert(Pdata.Playlist[0].Title);
+            //var markup = "<li><b>${Title}</b> (${Artist})</li>";
+            // Compile the markup as a named template
+              $( "#Playlisttemp" ).tmpl( Pdata.Playlist )
+             .appendTo( "#Playlist-Table" );
+             })
+             .fail(function(jqXHR,statusText,error){
+             alert("Can't get Playlist data");
+             });
+             
+             $.get('Comment.json',$.noop,'json').done(function(Cdata, statusText,jqXHR){
+            alert(Cdata.Commentlist[0].Comment);
+              $( "#Commentlist" ).tmpl( Cdata.Commentlist )
+             .appendTo( "#Comment-Table" );
+             })
+             .fail(function(jqXHR,statusText,error){
+             alert("Can't get Comment data");
+             });
         });
      //-->
     </script>
@@ -57,39 +61,25 @@
 	  <div class="span-24 last">
 	  <div class="span-16  colborder">
 	  <h3>Play List</h3>
-	  <table id = "Playlist-Table" >
-			<!-- ループはTrack-Row単位 -->
-			<tr class = "track-row">
+	  <table id = "Playlist-Table" ></table>
+      <script id="Playlisttemp" type="text/x-jquery-tmpl">
+      <tr class = "track-row">
 			<td class = "number-cell span-1">
-				1
+                ${NUM}
 				</td>
 				<td class = "track-cell span-15">
 				<div class ="content">
-				<a title="Go to track page for: Song name" href="/track/link" class="trackname">Song name</a>
+				<a title="Go to track page for: Song name" href=${MusicURL} class="trackname">${Title}</a>
 				<span class="by" >by</span>
-				<a title="Go to artist page for: artist" href="/track/link" class="artistname">SUZUKI YUUUUTAAAAAAAAAAAAAA</a>
-				<div class="etc" >House , 120 bpm , Cut in Cut out , sinc</div>
+				<a title="Go to artist page for: artist" href="/track/link" class="artistname">${Artist}</a>
+				<div class="etc" >${Genre} , ${BPM}bpm , ${Mix}, ${Sinc}</div>
 				<a title="Do you want to buy this tune?" href="/track/link" class="buy">Buy</a>
 				</div>
-				<div class="comment" style="">This is good tune but someone said "what's the fuck this".</div>
+				<div class="comment" style="">${Comment}</div>
 				</td>
 			</tr>
-			<tr class = "track-row">
-			<td class = "number-cell span-1">
-				2
-				</td>
-				<td class = "track-cell span-15">
-				<div class ="content">
-				<a title="Go to track page for: Song name" href="/track/link" class="trackname">Song name</a>
-				<span class="by" >by</span>
-				<a title="Go to artist page for: artist" href="/track/link" class="artistname">artist</a>
-				<div class="etc" >House , 120 bpm , Cut in Cut out , sinc</div>
-				<a title="Do you want to buy this tune?" href="/track/link" class="buy">Buy</a>
-				</div>
-				<div class="comment" style="">This is good tune.</div>
-				</td>
-			</tr>
-			</table>
+         </script>   
+      TEST
       </div>
       <div class="span-7 last">
         <h3>Youtube Mixed</h3>
@@ -104,16 +94,20 @@
   <input type="submit" id="submit" value="submit" style="float:right; " />
   <span id="countUp" style="float:left;">0</span>
  	</form>
- 	<table id = "Comment-Table" >
-			<tr class = "Comment-row">
+     
+ 	<table id = "Comment-Table" >　</table>
+        <script id="Commentlist" type="text/x-jquery-tmpl">
+            <tr class = "Comment-row">
 			<td class = "number-cell span-1">
-				1
+				${NUM}
 				</td>
 				<td class = "Comment-cell span-15 last">
+                ${Comment}
 				</td>
 			</tr>
-			</table>
-    </div>
+         </script>   
+    </div>   
+   
 
    </div>
       <hr>
