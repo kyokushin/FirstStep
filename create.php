@@ -1,14 +1,15 @@
 ﻿<?php
+// エラーが発生した場合にエラー表示をする設定
 ini_set( 'display_errors', 1 );
-define( 'SMARTY_DIR', '/usr/local/lib/Smarty-2.6.18/libs/' );
-require_once( SMARTY_DIR .'Smarty.class.php' );
+// Smartyを使うための準備
+require('Smarty.class.php');
+date_default_timezone_set('Asia/Tokyo');
 $smarty = new Smarty();
 
-$smarty->template_dir = '/var/www/smarty/templates/';
-$smarty->compile_dir  = '/var/www/smarty/templates_c/';
-$smarty->config_dir   = '/var/www/smarty/configs/';
-$smarty->cache_dir    = '/var/www/smarty/cache/';
+$smarty->template_dir = '/templates/';
+$smarty->compile_dir  = '/templates_c/';
+$smarty->config_dir   = '/configs/';
+$smarty->cache_dir    = '/cache/';
 
-$smarty->assign( 'name', 'あなたの名前' );
-$smarty->display( 'test.tpl' );
+$smarty->display( 'create.tpl' );
 ?> 
