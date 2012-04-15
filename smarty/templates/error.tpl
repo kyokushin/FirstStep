@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>Smarty</title>
+    <title>Smarty::Error</title>
   </head>
   <body>
-    Hello, {$name}!
+    エラー
   </body>
 </html>

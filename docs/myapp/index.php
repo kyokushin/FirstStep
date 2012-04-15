@@ -4,12 +4,16 @@
 require('/usr/local/lib/php/Smarty/Smarty.class.php');
 $smarty = new Smarty();
 
-$smarty->setTemplateDir('/Users/stenpel/DREGS/GIT/FirstStep/smarty/templates');
-$smarty->setCompileDir('/Users/stenpel/DREGS/GIT/FirstStep/smarty/templates_c');
-$smarty->setCacheDir('/Users/stenpel/DREGS/GIT/FirstStep/smarty/cache');
-$smarty->setConfigDir('/Users/stenpel/DREGS/GIT/FirstStep/smarty/configs');
+$smarty->setTemplateDir('/Users/stenpel/Sites/FirstStep/smarty/templates');
+$smarty->setCompileDir('/Users/stenpel/Sites/FirstStep/smarty/templates_c');
+$smarty->setCacheDir('/Users/stenpel/Sites/FirstStep/smarty/cache');
+$smarty->setConfigDir('/Users/stenpel/Sites/FirstStep/smarty/configs');
 
 $smarty->assign('name', 'Ned');
+
+$smarty->debugging = true;
+$smarty->testInstall(); 
+
 $smarty->display('index.tpl');
 
 ?>
