@@ -50,7 +50,7 @@
 	};
 
 	var init_vals = function(i) {
-		$("#cover"+i+" :text").val(' ');
+		$("#cover"+i+" :text").val('');
 		$("#cover"+i+" select").val('1');
 		$("#cover"+i+" :checkbox").val('SINC');
 	};
@@ -70,6 +70,27 @@
 		});
         //Form send
         $("#Get").click(function() {
+        //play_list が一番外
+        var play_list = {};
+        play_list['User'] = "DUMMY";
+        play_list['UserComment'] = $('#UserComment').val();
+        play_list['PLname'] = $('#PLname').val();
+        play_list['PLtags'] = $('#PLtags').val();
+        //Detail
+        var query_list = {};
+        var list = {};
+        $('[id\^="cover"]').each(function(index, domEle){
+        list['Artist'] = $(this).find('.Artist').val();
+        list['Song'] = $(this).find('.Song').val();
+        list['Genre'] = $(this).find('.Genre').val();
+        list['BPM'] = $(this).find('.BPM').val();
+        list['MIX'] = $(this).find(':selected').val();
+        list['SINC'] = $(this).find(':checkbox').attr('checked');
+        list['Comment'] = $(this).find('.Comment').val();
+        query_list[index] = list;
+        //alert(index);
+        });
+        play_list['query_list'] = query_list;
         var obj = $('form').serializeArray();
         $('<P>',{html:'<strong>serialize</strong><br />' + $.param(obj)})
         .appendTo(document.body);
@@ -134,14 +155,14 @@
          <fieldset>
             <legend>Play List Infomation</legend>
                <div class="span-16">
-              <label for="AutherC">Auther Comment</label><br>
-              <textarea name="AutherC" id="AutherC" rows="7" cols="55"></textarea>
+              <label for="UserComment">Auther Comment</label><br>
+              <textarea name="UserComment" id="UserComment" rows="7" cols="55"></textarea>
               <!--文字数表示-->
               <div id="countUp">0</div>
               </div>
               <div class="span-7 last">
-              <label for="PLtags">Playlist Name</label>
-              <input type="text" class="title" id="title" name="title" value="">
+              <label for="PLname">Playlist Name</label>
+              <input type="text" class="title" id="PLname" name="PLname" value="">
               <label for="PLtags">Playlist Genre (for tags)</label>
               <input type="text" class="mid" id="PLtags" name="PLtags" value="">
              <br>
@@ -161,7 +182,7 @@
               <input type="text" class="Artist" name="Artist1" id="Artist1" value="">
               </div>
                <div class="span-7">
-              <label for="">Song</label>
+              <label for="Song">Song</label>
                <input type="text" class="Song" name="Song1" id="Song1" value="">
               </div>
               <div class="span-4">
@@ -177,7 +198,7 @@
             </div>
             <div class="span-5">
             <label for="Mix">Mix type</label>
-            <select id="Mix1" name="Mix1"class="Mix">
+            <select id="Mix" name="Mix1"class="Mix">
               <option value="1">Fade in Fade out</option>
               <option value="2">Fade in Cut out</option>
               <option value="3">CUT in  Fade out</option>
@@ -186,7 +207,7 @@
              </div>
              <div class="span-2">
              <label>SINC</label><br>
-              <input type="checkbox" id="checkbox1" name="checkbox1" value="SINC" checked="checked" class="checkbox">
+              <input type="checkbox" id="checkbox" name="checkbox1" value="SINC" checked="checked" class="checkbox">
             </div>
              <div class="span-15 last ">
               <label for="Comment">Comment</label>

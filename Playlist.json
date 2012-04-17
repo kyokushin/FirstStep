@@ -1,29 +1,27 @@
 ﻿{
-    "Playlist":[
-    {
-    "NUM": 1,
-    "Title":"Easten Standard",
-    "Artist":"808 State",
-    "Genre":"Electronic",
-    "BPM":140,  
-    "Mix":1,
-    "Sinc":"1",
-    "Comment":"NICE",
-    "MusicURL":"http://www.SONG.html",
-    "ArtistURL":"http://www.ARTIST.html"
-    },
-    {
-    "NUM": 2,
-    "Title":"Arlas 7",
-    "Artist":"808 State",
-    "Genre":"Electronic",
-    "BPM":140,
-    "Mix":1,
-    "Sinc":"1",
-    "Comment":"FUCK",
-    "MusicURL":"http://www.SONG2.html",
-    "ArtistURL":"http://www.ARTIST2.html"
-    }
+    "Play_list":[
+        "User":"DUMMY"
+        "UserComment":"Auther's Comment",
+        "PLname":"Playlist name",
+        "Pltags":"Genre tags",
+        query_list{
+            "Title":"Easten Standard",
+            "Artist":"808 State",
+            "Genre":"Electronic",
+            "BPM":140,  
+            "Mix":1,
+            "Sinc":"1",
+            "Comment":"NICE",
+            },
+            {
+            "Title":"Arlas 7",
+            "Artist":"808 State",
+            "Genre":"Electronic",
+            "BPM":140,
+            "Mix":1,
+            "Sinc":"1",
+            "Comment":"FUCK",
+            }
     ]   
 }
     

@@ -28,25 +28,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     ),
   ),
   'nocache_hash' => '251924f7c6739beb238-36899499',
-  'variables' => 
-  array (
-    'SCRIPT_NAME' => 0,
-    'Name' => 1,
-    'FirstName' => 0,
-    'LastName' => 0,
-    'contacts' => 0,
-    'option_values' => 0,
-    'option_selected' => 0,
-    'option_output' => 0,
-  ),
-  'has_nocache_code' => true,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4f7c6739e30450_68387440',
+  'unifunc' => 'content_4f892f88504573_07773491',
+  'has_nocache_code' => true,
   'cache_lifetime' => 120,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4f7c6739e30450_68387440')) {function content_4f7c6739e30450_68387440($_smarty_tpl) {?><br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\sysplugins\smarty_internal_templatecompilerbase.php</b> on line <b>148</b><br />
-<HTML>
+<?php if ($_valid && !is_callable('content_4f892f88504573_07773491')) {function content_4f892f88504573_07773491($_smarty_tpl) {?><HTML>
 <HEAD>
 <TITLE>foo - <?php echo $_smarty_tpl->tpl_vars['Name']->value;?>
 </TITLE>
@@ -60,13 +47,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <b>
 Title: Welcome To Smarty!
 </b>
-The current date and time is <br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\modifier.date_format.php</b> on line <b>59</b><br />
-2012-04-04 15:22:33
+The current date and time is 2012-04-14 17:04:24
 
 The value of global assigned variable $SCRIPT_NAME is /index.php
 
-Example of accessing server environment variable SERVER_NAME: 127.0.0.1
+Example of accessing server environment variable SERVER_NAME: localhost
 
 The value of {$Name} is <b><?php echo $_smarty_tpl->tpl_vars['Name']->value;?>
 </b>
@@ -102,58 +87,6 @@ testing strip tags
 This is an example of the html_select_date function:
 
 <form>
-<br />
-<b>Warning</b>:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>60</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  mktime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>63</b><br />
-<br />
-<b>Warning</b>:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>208</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_date.php</b> on line <b>307</b><br />
 <select name="Date_Month">
 <option value="01">January</option>
 <option value="02">February</option>
@@ -172,7 +105,7 @@ This is an example of the html_select_date function:
 <option value="1">01</option>
 <option value="2">02</option>
 <option value="3">03</option>
-<option value="4" selected="selected">04</option>
+<option value="4">04</option>
 <option value="5">05</option>
 <option value="6">06</option>
 <option value="7">07</option>
@@ -182,7 +115,7 @@ This is an example of the html_select_date function:
 <option value="11">11</option>
 <option value="12">12</option>
 <option value="13">13</option>
-<option value="14">14</option>
+<option value="14" selected="selected">14</option>
 <option value="15">15</option>
 <option value="16">16</option>
 <option value="17">17</option>
@@ -221,14 +154,12 @@ This is an example of the html_select_date function:
 This is an example of the html_select_time function:
 
 <form>
-<br />
-<b>Warning</b>:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\plugins\function.html_select_time.php</b> on line <b>186</b><br />
 <select name="Time_Hour">
 <option value="01">01</option>
 <option value="02">02</option>
-<option value="03" selected="selected">03</option>
+<option value="03">03</option>
 <option value="04">04</option>
-<option value="05">05</option>
+<option value="05" selected="selected">05</option>
 <option value="06">06</option>
 <option value="07">07</option>
 <option value="08">08</option>
@@ -242,7 +173,7 @@ This is an example of the html_select_time function:
 <option value="01">01</option>
 <option value="02">02</option>
 <option value="03">03</option>
-<option value="04">04</option>
+<option value="04" selected="selected">04</option>
 <option value="05">05</option>
 <option value="06">06</option>
 <option value="07">07</option>
@@ -260,7 +191,7 @@ This is an example of the html_select_time function:
 <option value="19">19</option>
 <option value="20">20</option>
 <option value="21">21</option>
-<option value="22" selected="selected">22</option>
+<option value="22">22</option>
 <option value="23">23</option>
 <option value="24">24</option>
 <option value="25">25</option>
@@ -324,7 +255,7 @@ This is an example of the html_select_time function:
 <option value="21">21</option>
 <option value="22">22</option>
 <option value="23">23</option>
-<option value="24">24</option>
+<option value="24" selected="selected">24</option>
 <option value="25">25</option>
 <option value="26">26</option>
 <option value="27">27</option>
@@ -333,7 +264,7 @@ This is an example of the html_select_time function:
 <option value="30">30</option>
 <option value="31">31</option>
 <option value="32">32</option>
-<option value="33" selected="selected">33</option>
+<option value="33">33</option>
 <option value="34">34</option>
 <option value="35">35</option>
 <option value="36">36</option>
@@ -381,8 +312,6 @@ This is an example of the html_options function:
 </select>
 </form>
 
-<br />
-<b>Warning</b>:  strftime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in <b>C:\php\libs\sysplugins\smarty_internal_templatecompilerbase.php</b> on line <b>148</b><br />
 </BODY>
 </HTML>
 
