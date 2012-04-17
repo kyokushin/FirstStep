@@ -12,6 +12,8 @@
 	 <!-- jquery script -->
       {literal}
     <script src="js/jquery.js"></script>
+    <script src="js/imagePreview.js"></script>
+    <script src="js/jquery.upload.js"></script>
     <script type="text/javascript">
   <!--
 	// フォームの複製を行う関数を定義
@@ -60,6 +62,10 @@
 	};
 	// イベントを設定
 	$(function() {
+    //送信ボタンの非表示
+        $('#submit').hide();
+        
+    //行削除
 		$("#delete1").css({cursor: "default", color: "#000"});
 		$("#Add").click(function() {
 			var i=1;
@@ -76,6 +82,7 @@
         play_list['UserComment'] = $('#UserComment').val();
         play_list['PLname'] = $('#PLname').val();
         play_list['PLtags'] = $('#PLtags').val();
+        play_list['image']= $('.preview').find("img").attr('target');
         //Detail
         var query_list = {};
         var list = {};
@@ -137,7 +144,45 @@
 	            $("#countUp").css("color","red");
 	        } else{$("#countUp").css("color","#666");}
 	    });
-
+//image file
+         //フォームの内容が変更されたとき
+    $('#img').change(function() {
+        var preview = $('.preview');
+ 
+        //現在表示されているものを消す。
+        preview.find("img").fadeOut(300);
+ 
+        //アップロード    
+        $(this).upload(
+            'upload.php',
+            $("form").serialize(),
+            function(html){
+            //サムネイルの表示
+                preview.html(html).animate({"height":preview.find("img").height()+"px"},300,function(){
+                    preview.find("img").hide().fadeIn(300);
+                    alert(preview.find("img").attr('target'));
+                    preview.attr('href',preview.find("img").attr('target'));
+                });
+            },'html');
+    });
+ 
+    //離れるときに画像を削除
+    $(window).bind("beforeunload",function(){
+        var unlinkFile = $("#postPhotoName").val();
+        $.ajax({
+            async: false,
+            cache: false,
+            type:   "POST",
+            url:    "upload.php",
+            data:   "postPhotoName="+unlinkFile
+ 
+        });
+ 
+    });
+        
+        
+        
+        
         
 	});
   //-->
@@ -167,7 +212,9 @@
               <input type="text" class="mid" id="PLtags" name="PLtags" value="">
              <br>
               <label for="Pic">Picture</label>
-              <input type="file" name="Pic">
+              <input type="file" value="" id="img" name="img" size="20" />
+              <a class="preview"><div>Preview is here</div></a>
+              <!-- <input type="file" name="Pic"> -->
             </div>
            </fieldset>
 <div class="span-24 last">
