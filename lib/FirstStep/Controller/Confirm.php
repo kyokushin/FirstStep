@@ -50,7 +50,7 @@ class ConfirmController {
       $music_url = $this->get_music_url($song_name, $artist_name);
       if(!$music_url) {
 	$query = $song_name . "+" . $artist_name;
-	$music_url = get_url_list($query);
+	$music_url = get_url_list_from_json($query);
 	$q->{'downloaded'} = "1";
       }
 
