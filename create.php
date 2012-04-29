@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // エラーが発生した場合にエラー表示をする設定
 ini_set( 'display_errors', 1 );
 // Smartyを使うための準備

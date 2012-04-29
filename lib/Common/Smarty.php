@@ -1,10 +1,10 @@
 <?php
-require('Smarty.class.php');
+require('/usr/local/lib/php/Smarty/Smarty.class.php');
 
-class Smarty {
+class Template {
   private static $smarty;
 
-  public static function GetSmarty(){
+  public static function GetTemplate(){
     if(!$smarty) {
       $smarty = new Smarty();
 
