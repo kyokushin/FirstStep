@@ -14,6 +14,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/imagePreview.js"></script>
     <script src="js/jquery.upload.js"></script>
+    <script src="js/jquery.json-2.3.min.js"></script>
     <script type="text/javascript">
   <!--
 	// フォームの複製を行う関数を定義
@@ -95,13 +96,13 @@
         list['SINC'] = $(this).find(':checkbox').attr('checked');
         list['Comment'] = $(this).find('.Comment').val();
         query_list[index] = list;
-        //alert(index);
         });
         play_list['query_list'] = query_list;
+	var decoded_play_list = $.toJSON(play_list);
         var obj = $('form').serializeArray();
-        $('<P>',{html:'<strong>serialize</strong><br />' + $.param(obj)})
+        $('<P>',{html:'<strong>serialize</strong><br />' + decoded_play_list})
         .appendTo(document.body);
-        $.ajax({type:'POST',url:'echo.php?mode=init',data:obj,dataType:'json'})
+        $.ajax({type:'POST',url:'confirm.php?mode=init', data:decoded_play_list ,dataType:'json'})
         .done(function(data,statusText,jqXHR){console('送信済み');});
         });
         
