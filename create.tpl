@@ -101,7 +101,7 @@
         var obj = $('form').serializeArray();
         $('<P>',{html:'<strong>serialize</strong><br />' + $.param(obj)})
         .appendTo(document.body);
-        $.ajax({type:'POST',url:'confirm.php?mode=init',data:obj,dataType:'json'})
+        $.ajax({type:'POST',url:'confirm.php?mode=init',data:play_list,dataType:'json'})
         .done(function(data,statusText,jqXHR){console('送信済み');});
         });
         
