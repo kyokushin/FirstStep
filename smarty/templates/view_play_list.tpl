@@ -7,5 +7,11 @@
   </head>
   <body bgcolor=#FF3399>
     <div id="flash_player"></div>
+    <input type="button" id="next_button" value="next">
+    <input type="button" id="stop_button" value="play">
+    <input type="button" id="prev_button" value="prev">
+    <div id="play_lists" next_song_url="hoge" prev_song_url="huga" display="none">
+      
+    </div>
   </body>
 </html>

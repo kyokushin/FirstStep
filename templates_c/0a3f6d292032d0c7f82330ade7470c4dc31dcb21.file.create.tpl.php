@@ -1,4 +1,25 @@
-﻿	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+<?php /* Smarty version Smarty-3.1.8, created on 2012-05-04 13:48:26
+         compiled from "create.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:9021461064f9ccdfd6e3e51-45571389%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '0a3f6d292032d0c7f82330ade7470c4dc31dcb21' => 
+    array (
+      0 => 'create.tpl',
+      1 => 1336106900,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '9021461064f9ccdfd6e3e51-45571389',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4f9ccdfd724ab2_18955308',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_4f9ccdfd724ab2_18955308')) {function content_4f9ccdfd724ab2_18955308($_smarty_tpl) {?>﻿	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 	"http://www.w3.org/TR/html4/strict.dtd">
 
 	<html lang="en">
@@ -10,7 +31,7 @@
 	     <link rel="stylesheet" href="css/Create.css" type="text/css" media="screen">
 	    <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 	 <!-- jquery script -->
-      {literal}
+      
     <script src="js/jquery.js"></script>
     <script src="js/imagePreview.js"></script>
     <script src="js/jquery.upload.js"></script>
@@ -99,8 +120,8 @@
         });
         play_list['query_list'] = query_list;
 	var decoded_play_list = $.toJSON(play_list);
-
-        $('<P>',{html:'<strong>serialize</strong><br />' + play_list })
+        var obj = play_list.serializeArray();
+        $('<P>',{html:'<strong>serialize</strong><br />' + obj})
         .appendTo(document.body);
         $.ajax({type:'POST',url:'confirm.php?mode=init', data:decoded_play_list ,dataType:'json'})
         .done(function(data,statusText,jqXHR){console('送信済み');});
@@ -188,7 +209,7 @@
 	});
   //-->
   </script>
- {/literal}
+ 
   <title>test</title>
 </head>
 <body>
@@ -272,4 +293,4 @@
  </div>
  </div>
 </body>
-</html>
+</html><?php }} ?>
